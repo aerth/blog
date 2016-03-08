@@ -38,6 +38,7 @@ version="$1"
 mkdir $1 > /dev/null 2>&1
 name="../""$version""/""$version""_"
 
+# CGO_ENABLED=1
 GOOS=darwin GOARCH=amd64 go build -o "$name"osx-amd64
 
 GOOS=darwin GOARCH=386 go build -o "$name"osx-386
@@ -63,5 +64,61 @@ GOOS=linux GOARCH=386 go build -o "$name"linux-386
 GOOS=windows GOARCH=amd64 go build -o "$name"windows-amd64.exe
 
 GOOS=windows GOARCH=386 go build -o "$name"windows-386.exe
+
+```
+
+
+## Update:
+
+Run this script before, to make sure we have the library and runtimes for each OS/ARCH
+
+```
+#!/bin/sh
+# Copyright 2016 aerth@sdf.org
+# MIT License
+
+if [ -z "$1" ]; then
+echo
+echo Run this only once. Sleeping for 5 seconds, and starting the bootstraps.
+echo Usage: $0 once
+echo
+sleep 1
+exit 0
+fi
+
+if [ -z "$GOROOT" ]; then
+echo
+echo Set GOROOT !!!!
+echo Usage: $0 once
+echo
+sleep 1
+exit 0
+fi
+cd $GOROOT/src
+sleep 5
+
+
+echo \"Im merely remarking upon the paradox of asking a masked man who he is.\"
+sudo GOOS=darwin GOARCH=386 ./make.bash --no-clean
+sudo GOOS=darwin GOARCH=amd64 ./make.bash --no-clean
+sudo GOOS=freebsd GOARCH=386 ./make.bash --no-clean
+sudo GOOS=freebsd GOARCH=amd64 ./make.bash --no-clean
+sudo GOOS=netbsd GOARCH=386 ./make.bash --no-clean
+sudo GOOS=netbsd GOARCH=amd64 ./make.bash --no-clean
+sudo GOOS=openbsd GOARCH=386 ./make.bash --no-clean
+sudo GOOS=openbsd GOARCH=amd64 ./make.bash --no-clean
+sudo GOOS=linux GOARCH=386 ./make.bash --no-clean
+sudo GOOS=linux GOARCH=amd64 ./make.bash --no-clean
+sudo GOOS=linux GOARCH=arm ./make.bash --no-clean
+sudo GOOS=windows GOARCH=386 ./make.bash --no-clean
+sudo GOOS=windows GOARCH=amd64 ./make.bash --no-clean
+
+
+echo ""
+echo ""
+echo "ALL DONE! Go build!"
+echo ""
+echo ""
+echo ""
 
 ```
