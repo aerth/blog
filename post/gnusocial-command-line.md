@@ -13,7 +13,8 @@ So you are on your shell account, and want to read, post, follow new people, etc
 
 Very work in progress. The entire code base is under complete transformation as I am learning Go. As of v0.0.8 the command go-quitter is separated from the go-quitter library. The library still may have things like "os.Exit()" and "fmt.Println()" which should not be there. They are being removed eventually.
 
-
+Here is a screencast overview of the program <noscript>(if you enable javascript!)</noscript>:
+[![asciicast](https://asciinema.org/a/39981.png)](https://asciinema.org/a/39981)
 
 ```
 go get -v -u github.com/aerth/go-quitter/cmd/go-quitter
