@@ -5,4 +5,4 @@ title = "now powered by webhooks"
 
 +++
 
-More info soon!
+Using Go webhook and github.com/aerth/blog
