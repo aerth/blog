@@ -32,9 +32,32 @@ April 2016: https://github.com/golang/go/issues/15234
 
 See this link: http://comments.gmane.org/gmane.os.plan9.general/77606
 
+And this one: http://9legacy.org/9legacy/doc/go/faq.html 
+
 Watch some youtube videos.
 
-## Grab the bootstrap
+## From 9front pdf
+
+```
+# automatically converted ca certs from mozilla.org
+hget https://curl.haxx.se/ca/cacert.pem >/sys/lib/tls/ca.pem
+# shell script that emulates git commands
+hget http://9front.org/extra/rc/git >$home/bin/rc/git
+chmod 775 $home/bin/rc/git
+# fetch the repository
+git clone https://go.googlesource.com/go
+cd go
+git checkout go1.4.2    # amd64 only: bootstrap 1.6 with 1.4.3
+# build go
+cd src
+./make.rc
+# install documentation
+go get golang.org/x/tools/cmd/godoc
+
+```
+
+
+## Or try grabbing the bootstrap (prebuilt binary)
 
 ```
 hget https://storage.googleapis.com/go-builder-data/gobootstrap-plan9-386.tar.gz > gobootstrap-plan9-386.tar.gz
@@ -81,6 +104,8 @@ If you have the git rc script installed, You can now `go get`
 `go get -v github.com/aerth/hashsum/cmd/hashsum`
 
 
-[Screenshot of Plan 9 after compiling a Go program](https://file.isupon.us/go-plan9.png)
+
+
+[The one on the left](https://file.isupon.us/go-plan9.png)
 
 
