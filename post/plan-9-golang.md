@@ -81,6 +81,6 @@ If you have the git rc script installed, You can now `go get`
 `go get -v github.com/aerth/hashsum/cmd/hashsum`
 
 
-![Photo of Plan 9 after compiling a Go program](https://file.isupon.us/selif/go-plan9.png))
+[Screenshot of Plan 9 after compiling a Go program](https://file.isupon.us/go-plan9.png)
 
 
