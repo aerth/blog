@@ -106,6 +106,6 @@ If you have the git rc script installed, You can now `go get`
 
 
 
-[The one on the left](https://file.isupon.us/go-plan9.png)
+[The one on the left](https://file.isupon.us/selif/go-plan9.png)
 
 
