@@ -1,7 +1,7 @@
 
 +++
 date = "2016-04-20T00:00:00Z"
-title = "Go and Plan 9"
+title = "Go and plan 9"
 
 +++
 
@@ -17,16 +17,16 @@ title = "Go and Plan 9"
 
 ---insert explosion gif---
 
-  * It seems Go and Plan 9 don't like each other at the moment?
+  * It seems Go and plan 9 don't like each other at the moment?
   * No real git, whatever. Always on "master" branch.
 
 ## Awesome!
 
-  * Go is one of the few languages that one can write Plan 9 software in.
-  * Plan 9 is a great Go programming environment.
+  * Go is one of the few languages that one can write plan 9 software in.
+  * plan 9 is a great Go programming environment.
   * I don't know much C and I don't plan on learning it.
 
-## Installing Go on Plan 9
+## Installing Go on plan 9
 
 April 2016: https://github.com/golang/go/issues/15234
 
