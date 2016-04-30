@@ -7,6 +7,10 @@ title = "cosgo - contact form server"
 
 Edit: Here is a link to a running cosgo instance: https://isupon.us
 
+And newest version running: https://cosgo.herokuapp.com
+
+Download: https://github.com/aerth/cosgo/releases/latest
+
 While I was designing web sites, I noticed most of the logic in typical web sites happens *in the form*. For example:
 
   * Plain old Contact forms

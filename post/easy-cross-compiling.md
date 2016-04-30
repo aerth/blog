@@ -9,6 +9,8 @@ Build for Mac OS X, Windows, Windows 64, linux-arm, netbsd-amd64, and a
 plethora of others. Modify to your needs, like anything else in the 
 world.
 
+Latest is inside https://github.com/aerth/cosgo (Makefile and scripts/pack.sh)
+
 The following code outputs these binary files:
 
 ```sh
