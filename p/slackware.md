@@ -1,6 +1,6 @@
 
 +++
-date = "2016-05-01T05:31:56-07:00"
+date = "2016-05-01T05:31:56Z"
 title = "slackware scripts"
 
 +++
