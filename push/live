@@ -1,0 +1,25 @@
+#!/bin/sh
+set -e
+mkdir log || true
+touch "log/HOOK-$(date)"
+#if [ -z "$1" ]; then
+#echo no execute
+#fi
+
+#if [ "$1" = "go" ]; then
+cd content && git pull origin master && cd ../
+/sdf/arpa/af/a/aerth/bin/hugo
+rm -Rf /www/af/a/aerth/*
+cp -a public/* /www/af/a/aerth/
+cp -a public/* $HOME/public_html/
+chmod o+rx,o-w /sdf/arpa/af/a/aerth/public_html
+chmod -R go+rx $HOME/public_html
+chmod -R o+r /www/af/a/aerth
+chmod -R g+r /www/af/a/aerth
+
+mkhomepg -p
+echo Done!
+exit 
+#fi
+
+#exit

@@ -1,0 +1,12 @@
+baseurl = "https://sdf.org/~aerth/"
+languageCode = "en-us"
+title = "0/10 Don't Bookmark."
+theme = "aerth"
+[Params]
+subtitle = "netbsd, nginx, golang, and whatnot"
+github = "https://github.com/aerth"
+gitgo = "http://git.isupon.us/aerth"
+twitter = "https://gs.sdf.org/aerth"
+profile = "https://sdf.org/~aerth/images/aerth.gif"
+copyright = ""
+disqusShortname = "aerth"

@@ -1,0 +1,6 @@
+[submodule "content"]
+	path = content
+	url = ./content/
+[submodule "aerth"]
+	path = aerth
+	url = ./themes/aerth
