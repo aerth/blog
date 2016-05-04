@@ -34,3 +34,20 @@ suprslack - simple SlackBuilds and security upgrades
     `-- suprslack
 
 ```
+
+
+Here is nice to add to your /etc/rc.d/rc.inet1 
+It asks you on boot whether you want to DHCP or not.
+
+Find the DHCP section and these lines:
+
+```
+
+        echo "do dhcp?"
+        read CONTINUEDHCP
+        if [ "$CONTINUEDHCP" == "yes" ]; then
+        echo "/etc/rc.d/rc.inet1:  /sbin/dhcpcd -t ${DHCP_TIMEOUT[$i]:-10} ${DHCP_OPTIONS} ${1}" | $LOGGER
+        /sbin/dhcpcd -t ${DHCP_TIMEOUT[$i]:-10} ${DHCP_OPTIONS} ${1}
+        fi
+
+```
