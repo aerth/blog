@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>easy cross compiling &middot; aerth</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://aerth.github.io/blog/"><h1>aerth</h1></a>
+      <p class="lead">
+       aerth stuff 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://aerth.github.io/blog/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>easy cross compiling</h1>
+  <time datetime=2016-02-11T08:35:14Z class="post-date">Thu, Feb 11, 2016</time>
+  
+
+<p>Build for Mac OS X, Windows, Windows 64, linux-arm, netbsd-amd64, and a
+plethora of others. Modify to your needs, like anything else in the
+world.</p>
+
+<p>Latest is inside <a href="https://github.com/aerth/cosgo">https://github.com/aerth/cosgo</a> (Makefile and scripts/pack.sh)</p>
+
+<p>The following code outputs these binary files:</p>
+
+<pre><code class="language-sh">$ ./build-archs.sh Version10
+$ ls Version10/
+
+Version10_freebsd-386
+Version10_netbsd-386
+Version10_osx-amd64 
+Version10_freebsd-amd64 
+Version10_netbsd-amd64 
+Version10_windows-386.exe 
+Version10_linux-386 
+Version10_openbsd-386 
+Version10_windows-amd64.exe 
+Version10_linux-amd64 
+Version10_openbsd-amd64 
+Version10_linux-arm 
+Version10_osx-386
+
+
+</code></pre>
+
+<pre><code>#!/bin/sh
+version=&quot;$1&quot;
+mkdir $1 &gt; /dev/null 2&gt;&amp;1
+name=&quot;../&quot;&quot;$version&quot;&quot;/&quot;&quot;$version&quot;&quot;_&quot;
+
+# CGO_ENABLED=1
+GOOS=darwin GOARCH=amd64 go build -o &quot;$name&quot;osx-amd64
+
+GOOS=darwin GOARCH=386 go build -o &quot;$name&quot;osx-386
+
+GOOS=freebsd GOARCH=amd64 go build -o &quot;$name&quot;freebsd-amd64
+
+GOOS=freebsd GOARCH=386 go build -o &quot;$name&quot;freebsd-386
+
+GOOS=netbsd GOARCH=amd64 go build -o &quot;$name&quot;netbsd-amd64
+
+GOOS=netbsd GOARCH=386 go build -o &quot;$name&quot;netbsd-386
+
+GOOS=openbsd GOARCH=amd64 go build -o &quot;$name&quot;openbsd-amd64
+
+GOOS=openbsd GOARCH=386 go build -o &quot;$name&quot;openbsd-386
+
+GOOS=linux GOARCH=arm go build -o &quot;$name&quot;linux-arm
+
+GOOS=linux GOARCH=amd64 go build -o &quot;$name&quot;linux-amd64
+
+GOOS=linux GOARCH=386 go build -o &quot;$name&quot;linux-386
+
+GOOS=windows GOARCH=amd64 go build -o &quot;$name&quot;windows-amd64.exe
+
+GOOS=windows GOARCH=386 go build -o &quot;$name&quot;windows-386.exe
+
+</code></pre>
+
+<h2 id="update">Update:</h2>
+
+<p>Run this script before, to make sure we have the library and runtimes for each OS/ARCH</p>
+
+<pre><code>#!/bin/sh
+# Copyright 2016 aerth@sdf.org
+# MIT License
+
+if [ -z &quot;$1&quot; ]; then
+echo
+echo Run this only once. Sleeping for 5 seconds, and starting the bootstraps.
+echo Usage: $0 once
+echo
+sleep 1
+exit 0
+fi
+
+if [ -z &quot;$GOROOT&quot; ]; then
+echo
+echo Set GOROOT !!!!
+echo Usage: $0 once
+echo
+sleep 1
+exit 0
+fi
+cd $GOROOT/src
+sleep 5
+
+
+echo \&quot;Im merely remarking upon the paradox of asking a masked man who he is.\&quot;
+sudo GOOS=darwin GOARCH=386 ./make.bash --no-clean
+sudo GOOS=darwin GOARCH=amd64 ./make.bash --no-clean
+sudo GOOS=freebsd GOARCH=386 ./make.bash --no-clean
+sudo GOOS=freebsd GOARCH=amd64 ./make.bash --no-clean
+sudo GOOS=netbsd GOARCH=386 ./make.bash --no-clean
+sudo GOOS=netbsd GOARCH=amd64 ./make.bash --no-clean
+sudo GOOS=openbsd GOARCH=386 ./make.bash --no-clean
+sudo GOOS=openbsd GOARCH=amd64 ./make.bash --no-clean
+sudo GOOS=linux GOARCH=386 ./make.bash --no-clean
+sudo GOOS=linux GOARCH=amd64 ./make.bash --no-clean
+sudo GOOS=linux GOARCH=arm ./make.bash --no-clean
+sudo GOOS=windows GOARCH=386 ./make.bash --no-clean
+sudo GOOS=windows GOARCH=amd64 ./make.bash --no-clean
+
+
+echo &quot;&quot;
+echo &quot;&quot;
+echo &quot;ALL DONE! Go build!&quot;
+echo &quot;&quot;
+echo &quot;&quot;
+echo &quot;&quot;
+
+</code></pre>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

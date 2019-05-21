@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>x on aerth</title>
+    <link>https://aerth.github.io/blog/categories/x/</link>
+    <description>Recent content in x on aerth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Feb 2016 00:29:31 +0000</lastBuildDate>
+    
+	<atom:link href="https://aerth.github.io/blog/categories/x/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>five volt future</title>
+      <link>https://aerth.github.io/blog/p/five-volt-future/</link>
+      <pubDate>Tue, 09 Feb 2016 00:29:31 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/five-volt-future/</guid>
+      <description>I have a small collection of 5v accessories. I feel 5V is an epic thing.
+Mobile homes / RVs have 5volt support!
+Cabins can have 5volt support!
+Your new home can have 5volt support!
+Imagine no adapters, it&amp;rsquo;s easy if you tried.
+ Anker 15000 mAh Battery Anker 14W Solar Charger (backpack portable size) Vape Pen, Battery pack ASUS Zentab tablet Wind-up USB charger Raspberry Pi
+ USB 4-port hub</description>
+    </item>
+    
+    <item>
+      <title>golang setup</title>
+      <link>https://aerth.github.io/blog/p/golang-setup/</link>
+      <pubDate>Mon, 08 Feb 2016 02:29:34 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/golang-setup/</guid>
+      <description>Golang post-install Setting $GOPATH I use this in my ~/.zshrc or ~/.bashrc or system-wide in /etc/profile on a new user, or new computer. I don&amp;rsquo;t mess with it ever:
+export GOPATH=$HOME/work # set gopath export PATH=$PATH:$GOPATH/bin # put go programs in your path  Now I test with something simple, and useful: sift, a fast grep alternative.
+go get -v -u github.com/svent/sift testing echo $PATH | sift $GOPATH  New projects are in namespaces, cd $GOPATH/src/github.</description>
+    </item>
+    
+  </channel>
+</rss>

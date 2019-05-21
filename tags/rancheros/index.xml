@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rancheros on aerth</title>
+    <link>https://aerth.github.io/blog/tags/rancheros/</link>
+    <description>Recent content in rancheros on aerth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 13 Mar 2016 07:03:27 +0000</lastBuildDate>
+    
+	<atom:link href="https://aerth.github.io/blog/tags/rancheros/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>rancheros docker stuff</title>
+      <link>https://aerth.github.io/blog/p/rancheros-docker-stuff/</link>
+      <pubDate>Sun, 13 Mar 2016 07:03:27 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/rancheros-docker-stuff/</guid>
+      <description>Run ncdu and figure out what is taking up all that space!
+docker run -it -v /:/mnt:ro aerth/ncdu ncdu /mnt  The ncdu docker image is 8.061 MB</description>
+    </item>
+    
+  </channel>
+</rss>

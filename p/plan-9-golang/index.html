@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Go and plan 9 &middot; aerth</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://aerth.github.io/blog/"><h1>aerth</h1></a>
+      <p class="lead">
+       aerth stuff 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://aerth.github.io/blog/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>Go and plan 9</h1>
+  <time datetime=2016-04-20T00:00:00Z class="post-date">Wed, Apr 20, 2016</time>
+  
+
+<h2 id="similarities">Similarities</h2>
+
+<ul>
+<li>Colors</li>
+<li>Mascots</li>
+<li>Coding Styles</li>
+<li>Some of the Authors</li>
+<li>Philosophy</li>
+</ul>
+
+<h2 id="issues-when-combined">Issues when combined</h2>
+
+<p>&mdash;insert explosion gif&mdash;</p>
+
+<ul>
+<li>It seems Go and plan 9 don&rsquo;t like each other at the moment?</li>
+<li>No real git, whatever. Always on &ldquo;master&rdquo; branch.</li>
+</ul>
+
+<h2 id="awesome">Awesome!</h2>
+
+<ul>
+<li>Go is one of the few languages that one can write plan 9 software in.</li>
+<li>plan 9 is a great Go programming environment.</li>
+<li>I don&rsquo;t know much C and I don&rsquo;t plan on learning it.</li>
+</ul>
+
+<h2 id="installing-go-on-plan-9">Installing Go on plan 9</h2>
+
+<p>April 2016: <a href="https://github.com/golang/go/issues/15234">https://github.com/golang/go/issues/15234</a></p>
+
+<p>See this link: <a href="http://comments.gmane.org/gmane.os.plan9.general/77606">http://comments.gmane.org/gmane.os.plan9.general/77606</a></p>
+
+<p>And this one: <a href="http://9legacy.org/9legacy/doc/go/faq.html">http://9legacy.org/9legacy/doc/go/faq.html</a></p>
+
+<p>Watch some youtube videos.</p>
+
+<h2 id="from-9front-pdf">From 9front pdf</h2>
+
+<pre><code># automatically converted ca certs from mozilla.org
+hget https://curl.haxx.se/ca/cacert.pem &gt;/sys/lib/tls/ca.pem
+# shell script that emulates git commands
+hget http://9front.org/extra/rc/git &gt;$home/bin/rc/git
+chmod 775 $home/bin/rc/git
+# fetch the repository
+git clone https://go.googlesource.com/go
+cd go
+git checkout go1.4.2    # amd64 only: bootstrap 1.6 with 1.4.3
+# build go
+cd src
+./make.rc
+# install documentation
+go get golang.org/x/tools/cmd/godoc
+
+</code></pre>
+
+<h2 id="or-try-grabbing-the-bootstrap-prebuilt-binary">Or try grabbing the bootstrap (prebuilt binary)</h2>
+
+<pre><code>hget https://storage.googleapis.com/go-builder-data/gobootstrap-plan9-386.tar.gz &gt; gobootstrap-plan9-386.tar.gz
+# wait some time
+tar xzf gobo*
+cd gobo*
+cd bin
+go
+# go 1560: suicide: sys: trap: fault read addr=0x4 pc=0x000bd985
+
+</code></pre>
+
+<h2 id="or-try-building-go-1-4-3-from-source">Or try Building go 1.4.3 from source</h2>
+
+<p>Open up <code>include/plan9/386/u.h</code> and comment the line that has a typedef for intptr. (thanks sirnewton_01)</p>
+
+<pre><code>cd src
+./make.rc
+
+</code></pre>
+
+<p>Add this line to your $home/lib/profile:</p>
+
+<pre><code>
+// Add after the `webfs` line, in the `case terminal`.
+bind -b /usr/go14/bin /bin
+GOPATH=/usr/glenda/src/gopath
+bind -b $GOPATH/bin /bin
+
+</code></pre>
+
+<p>Restarting!</p>
+
+<p><code>fshalt 1</code></p>
+
+<p>Once booted it up, try out  <code>go version</code></p>
+
+<p>Should Output: <code>go version go1.4.3 plan9/386</code></p>
+
+<p>If you have the git rc script installed, You can now <code>go get</code></p>
+
+<p><code>go get -v github.com/aerth/hashsum/cmd/hashsum</code></p>
+
+<p><a href="https://file.isupon.us/selif/go-plan9.png">The one on the left</a></p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

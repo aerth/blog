@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>pkgsrc on aerth</title>
+    <link>https://aerth.github.io/blog/tags/pkgsrc/</link>
+    <description>Recent content in pkgsrc on aerth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 Feb 2016 16:16:02 +0000</lastBuildDate>
+    
+	<atom:link href="https://aerth.github.io/blog/tags/pkgsrc/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>netbsd php70 fpm</title>
+      <link>https://aerth.github.io/blog/p/netbsd-php70-fpm/</link>
+      <pubDate>Fri, 12 Feb 2016 16:16:02 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/netbsd-php70-fpm/</guid>
+      <description>How to build php-fpm 7.0 on netbsd from pkgsrc And run it through nginx intertwined with another app. cat /mk.conf PKG_OPTIONS.nginx+= naxsi PKG_RCD_SCRIPTS=YES PHP_VERSIONS_ACCEPTED=70  cat /usr/pkgsrc/meta-pkgs/php70-extensions/Makefile # Comment out these lines: #DEPENDS+= php&amp;gt;=${PHP_VERSION}&amp;lt;${NEXT_VERS}:${PHPPKGSRCDIR} #DEPENDS+= ${APACHE_PKG_PREFIX}-${PHP_PKG_PREFIX}&amp;gt;=${PHP_VERSION}&amp;lt;${NEXT_VERS}:../../www/ap-php  $ cd /usr/pkgsrc/meta-pkgs/php70-extensions/ $ make clean &amp;amp;&amp;amp; make update
+$ cd /usr/pkgsrc/www/nginx $ make clean &amp;amp;&amp;amp; make update
+cat /usr/pkg/etc/nginx/nginx.conf  user nginx nginx; worker_processes 1; #error_log /var/log/nginx/error.log; $ error_log /var/log/nginx/error.log debug; #error_log /var/log/nginx/error.</description>
+    </item>
+    
+    <item>
+      <title>installing from pkgsrc on netbsd as unprivileged user</title>
+      <link>https://aerth.github.io/blog/p/installing-from-pkgsrc-on-netbsd-as-unprivileged-user/</link>
+      <pubDate>Fri, 12 Feb 2016 07:03:39 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/installing-from-pkgsrc-on-netbsd-as-unprivileged-user/</guid>
+      <description>$ cat ~/.zshrc
+ # aerth local mk.conf export MAKECONF=$HOME/etc/mk.conf export PREFIX=$HOME/pkg # aerth gopath export GOPATH=$HOME/work export PATH=$HOME/bin:$GOPATH/bin:$HOME/usr/pkg/bin:$PATH export GOARCH=amd64 export GOOS=netbsd # aerth local goroot export GOROOT=$HOME/usr/pkg/go PATH=${PATH}:/sys/sdf/bin MANPATH=${MANPATH}:/sys/sdf/man  </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>aerth</title>
+    <link>https://aerth.github.io/blog/</link>
+    <description>Recent content on aerth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 May 2016 05:31:56 +0000</lastBuildDate>
+    
+	<atom:link href="https://aerth.github.io/blog/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>slackware scripts</title>
+      <link>https://aerth.github.io/blog/p/slackware/</link>
+      <pubDate>Sun, 01 May 2016 05:31:56 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/slackware/</guid>
+      <description>Here it is: git clone https://github.com/aerth/sh.git
+youtube-list downloads and installs youtube-dl if you don&amp;rsquo;t have it already.
+ssh-tunnel makes it easy to SOCKS5 on SSH.
+suprslack - simple SlackBuilds and security upgrades
+ |-- README |-- bin | |-- icanhazip | `-- youtube-list |-- install.sh |-- rc.d | |-- adminer | |-- hdmi-hi | |-- hdmi-low | |-- iptables | |-- network-time | |-- ssh-tunnel | `-- vga-1440 `-- sbin |-- mariadb_init `-- suprslack  Here is nice to add to your /etc/rc.</description>
+    </item>
+    
+    <item>
+      <title>Go and plan 9</title>
+      <link>https://aerth.github.io/blog/p/plan-9-golang/</link>
+      <pubDate>Wed, 20 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/plan-9-golang/</guid>
+      <description>Similarities  Colors Mascots Coding Styles Some of the Authors Philosophy  Issues when combined &amp;mdash;insert explosion gif&amp;mdash;
+ It seems Go and plan 9 don&amp;rsquo;t like each other at the moment? No real git, whatever. Always on &amp;ldquo;master&amp;rdquo; branch.  Awesome!  Go is one of the few languages that one can write plan 9 software in. plan 9 is a great Go programming environment. I don&amp;rsquo;t know much C and I don&amp;rsquo;t plan on learning it.</description>
+    </item>
+    
+    <item>
+      <title>cosgo - contact form server</title>
+      <link>https://aerth.github.io/blog/p/cosgo/</link>
+      <pubDate>Sat, 16 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/cosgo/</guid>
+      <description>Edit: Here is a link to a running cosgo instance: https://isupon.us
+And newest version running: https://cosgo.herokuapp.com
+Download: https://github.com/aerth/cosgo/releases/latest
+While I was designing web sites, I noticed most of the logic in typical web sites happens in the form. For example:
+ Plain old Contact forms &amp;ldquo;Request an estimate&amp;rdquo; for businesses Surveys mail-order catalog style purchasing  To upgrade your static site and implement a simple contact form means installing and using PHP, Node.</description>
+    </item>
+    
+    <item>
+      <title>seconf - secure configuration library</title>
+      <link>https://aerth.github.io/blog/p/seconf/</link>
+      <pubDate>Sat, 16 Apr 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/seconf/</guid>
+      <description>You know how you start a program and it needs environmental variables with some AWS keys or something?
+Or a configuration file, read once at startup and left just laying around.
+Well seconf adds a layer of protection to this area of the program.
+To someone who grabs a misplaced backup or something, it will be an encrypted file.
+To you, running your program, it will be a seamless experience.</description>
+    </item>
+    
+    <item>
+      <title>now powered by webhooks</title>
+      <link>https://aerth.github.io/blog/p/webhook-server/</link>
+      <pubDate>Sat, 26 Mar 2016 00:03:27 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/webhook-server/</guid>
+      <description>Using Go webhook and github.com/aerth/blog</description>
+    </item>
+    
+    <item>
+      <title>rancheros docker stuff</title>
+      <link>https://aerth.github.io/blog/p/rancheros-docker-stuff/</link>
+      <pubDate>Sun, 13 Mar 2016 07:03:27 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/rancheros-docker-stuff/</guid>
+      <description>Run ncdu and figure out what is taking up all that space!
+docker run -it -v /:/mnt:ro aerth/ncdu ncdu /mnt  The ncdu docker image is 8.061 MB</description>
+    </item>
+    
+    <item>
+      <title>ssh tunnel apt-get SOCKS proxy</title>
+      <link>https://aerth.github.io/blog/p/ssh-tunnel-socks-apt-get/</link>
+      <pubDate>Sun, 28 Feb 2016 06:10:47 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/ssh-tunnel-socks-apt-get/</guid>
+      <description>For use behind a restrictive firewall. Use SSH Tunnel for apt-get install (Debian)
+ $ cat bin/grab #!/bin/sh echo Downloading $1 using proxychains4 sudo proxychains4 -q apt-get install -d $1 echo Installing $1 from .debs sudo apt-get install $1  Set up proxychains4 for the SSH tunnel
+$ tail /usr/local/etc/proxychains.conf # proxy types: http, socks4, socks5 # ( auth types supported: &amp;quot;basic&amp;quot;-http &amp;quot;user/pass&amp;quot;-socks ) # [ProxyList] # defaults set to &amp;quot;tor&amp;quot; #socks4 127.</description>
+    </item>
+    
+    <item>
+      <title>one page web server contact form</title>
+      <link>https://aerth.github.io/blog/p/one-page-web-server-contact-form/</link>
+      <pubDate>Thu, 25 Feb 2016 04:03:46 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/one-page-web-server-contact-form/</guid>
+      <description>Hey do you use wordpress!? Hey do you still use PHP!? Have you heard of cosgo!?  Get cosgo for free at https://github.com/aerth/cosgo
+See it in action, contact the author at: https://isupon.us/cosgo
+Use custom template, secure your contact form, and serve fast pages all day with cosgo!
+The end of PHP I created cosgo so that I could host multiple web pages on a single server without opening up the vulnerabilities of PHP, or apache.</description>
+    </item>
+    
+    <item>
+      <title>gnusocial command line</title>
+      <link>https://aerth.github.io/blog/p/gnusocial-command-line/</link>
+      <pubDate>Wed, 24 Feb 2016 06:57:03 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/gnusocial-command-line/</guid>
+      <description>Go: qo-quitter &amp;ldquo;A GNU Social client for the future&amp;rdquo; So you are on your shell account, and want to read, post, follow new people, etc. go-quitter allows you to access your GNU Social node&amp;rsquo;s API from your terminal window.
+Very work in progress. The entire code base is under complete transformation as I am learning Go. As of v0.0.8 the command go-quitter is separated from the go-quitter library. The library still may have things like &amp;ldquo;os.</description>
+    </item>
+    
+    <item>
+      <title>netbsd php70 fpm</title>
+      <link>https://aerth.github.io/blog/p/netbsd-php70-fpm/</link>
+      <pubDate>Fri, 12 Feb 2016 16:16:02 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/netbsd-php70-fpm/</guid>
+      <description>How to build php-fpm 7.0 on netbsd from pkgsrc And run it through nginx intertwined with another app. cat /mk.conf PKG_OPTIONS.nginx+= naxsi PKG_RCD_SCRIPTS=YES PHP_VERSIONS_ACCEPTED=70  cat /usr/pkgsrc/meta-pkgs/php70-extensions/Makefile # Comment out these lines: #DEPENDS+= php&amp;gt;=${PHP_VERSION}&amp;lt;${NEXT_VERS}:${PHPPKGSRCDIR} #DEPENDS+= ${APACHE_PKG_PREFIX}-${PHP_PKG_PREFIX}&amp;gt;=${PHP_VERSION}&amp;lt;${NEXT_VERS}:../../www/ap-php  $ cd /usr/pkgsrc/meta-pkgs/php70-extensions/ $ make clean &amp;amp;&amp;amp; make update
+$ cd /usr/pkgsrc/www/nginx $ make clean &amp;amp;&amp;amp; make update
+cat /usr/pkg/etc/nginx/nginx.conf  user nginx nginx; worker_processes 1; #error_log /var/log/nginx/error.log; $ error_log /var/log/nginx/error.log debug; #error_log /var/log/nginx/error.</description>
+    </item>
+    
+    <item>
+      <title>golang ports</title>
+      <link>https://aerth.github.io/blog/p/golang-ports/</link>
+      <pubDate>Fri, 12 Feb 2016 08:54:14 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/golang-ports/</guid>
+      <description>So there are a bunch of command line programs out there that are common between unix varieties.
+Some not as common as others.
+You may recognize:
+Here is a list of simple utilities, but in Golang!  package cat
+import ( &amp;ldquo;github.com/yuya-takeyama/argf&amp;rdquo; &amp;ldquo;io&amp;rdquo; &amp;ldquo;os&amp;rdquo; )
+func Cat(args []string) (int, error) { r, err := argf.From(args) if err != nil { return 2, err } _, err = io.Copy(os.Stdout, r) if err !</description>
+    </item>
+    
+    <item>
+      <title>installing from pkgsrc on netbsd as unprivileged user</title>
+      <link>https://aerth.github.io/blog/p/installing-from-pkgsrc-on-netbsd-as-unprivileged-user/</link>
+      <pubDate>Fri, 12 Feb 2016 07:03:39 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/installing-from-pkgsrc-on-netbsd-as-unprivileged-user/</guid>
+      <description>$ cat ~/.zshrc
+ # aerth local mk.conf export MAKECONF=$HOME/etc/mk.conf export PREFIX=$HOME/pkg # aerth gopath export GOPATH=$HOME/work export PATH=$HOME/bin:$GOPATH/bin:$HOME/usr/pkg/bin:$PATH export GOARCH=amd64 export GOOS=netbsd # aerth local goroot export GOROOT=$HOME/usr/pkg/go PATH=${PATH}:/sys/sdf/bin MANPATH=${MANPATH}:/sys/sdf/man  </description>
+    </item>
+    
+    <item>
+      <title>easy cross compiling</title>
+      <link>https://aerth.github.io/blog/p/easy-cross-compiling/</link>
+      <pubDate>Thu, 11 Feb 2016 08:35:14 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/easy-cross-compiling/</guid>
+      <description>Build for Mac OS X, Windows, Windows 64, linux-arm, netbsd-amd64, and a plethora of others. Modify to your needs, like anything else in the world.
+Latest is inside https://github.com/aerth/cosgo (Makefile and scripts/pack.sh)
+The following code outputs these binary files:
+$ ./build-archs.sh Version10 $ ls Version10/ Version10_freebsd-386 Version10_netbsd-386 Version10_osx-amd64 Version10_freebsd-amd64 Version10_netbsd-amd64 Version10_windows-386.exe Version10_linux-386 Version10_openbsd-386 Version10_windows-amd64.exe Version10_linux-amd64 Version10_openbsd-amd64 Version10_linux-arm Version10_osx-386  #!/bin/sh version=&amp;quot;$1&amp;quot; mkdir $1 &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 name=&amp;quot;../&amp;quot;&amp;quot;$version&amp;quot;&amp;quot;/&amp;quot;&amp;quot;$version&amp;quot;&amp;quot;_&amp;quot; # CGO_ENABLED=1 GOOS=darwin GOARCH=amd64 go build -o &amp;quot;$name&amp;quot;osx-amd64 GOOS=darwin GOARCH=386 go build -o &amp;quot;$name&amp;quot;osx-386 GOOS=freebsd GOARCH=amd64 go build -o &amp;quot;$name&amp;quot;freebsd-amd64 GOOS=freebsd GOARCH=386 go build -o &amp;quot;$name&amp;quot;freebsd-386 GOOS=netbsd GOARCH=amd64 go build -o &amp;quot;$name&amp;quot;netbsd-amd64 GOOS=netbsd GOARCH=386 go build -o &amp;quot;$name&amp;quot;netbsd-386 GOOS=openbsd GOARCH=amd64 go build -o &amp;quot;$name&amp;quot;openbsd-amd64 GOOS=openbsd GOARCH=386 go build -o &amp;quot;$name&amp;quot;openbsd-386 GOOS=linux GOARCH=arm go build -o &amp;quot;$name&amp;quot;linux-arm GOOS=linux GOARCH=amd64 go build -o &amp;quot;$name&amp;quot;linux-amd64 GOOS=linux GOARCH=386 go build -o &amp;quot;$name&amp;quot;linux-386 GOOS=windows GOARCH=amd64 go build -o &amp;quot;$name&amp;quot;windows-amd64.</description>
+    </item>
+    
+    <item>
+      <title>golang switch to logfile</title>
+      <link>https://aerth.github.io/blog/p/golang-switch-to-logfile/</link>
+      <pubDate>Thu, 11 Feb 2016 08:28:17 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/golang-switch-to-logfile/</guid>
+      <description> func OpenLog(){ f, err := os.OpenFile(&amp;quot;./debug.log&amp;quot;, os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666) if err != nil { log.Fatal(&amp;quot;error opening file: %v&amp;quot;, err) log.Fatal(&amp;quot;MANDRILL_KEY is Crucial.&amp;quot;) os.Exit(1) } log.SetOutput(f) }  This function can be placed in main() like so:
+ log.Printf(&amp;quot;Starting Server on http://127.0.0.1:%s&amp;quot;, *port) log.Println(&amp;quot;Switching Logs to debug.log&amp;quot;) OpenLog() log.Println(&amp;quot;Server on&amp;quot;, *port)  </description>
+    </item>
+    
+    <item>
+      <title>golang random number generator</title>
+      <link>https://aerth.github.io/blog/p/golang-random-number-generator/</link>
+      <pubDate>Thu, 11 Feb 2016 08:27:02 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/golang-random-number-generator/</guid>
+      <description> func init() { rand.Seed(time.Now().UnixNano()) } var runes = []rune(&amp;quot;____ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890123456789012345678901234567890&amp;quot;) func GenerateAPIKey(n int) string { b := make([]rune, n) for i := range b { b[i] = runes[rand.Intn(len(runes))] } return string(b) }  </description>
+    </item>
+    
+    <item>
+      <title>building netbsd kernel</title>
+      <link>https://aerth.github.io/blog/p/building-netbsd-kernel/</link>
+      <pubDate>Wed, 10 Feb 2016 07:43:27 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/building-netbsd-kernel/</guid>
+      <description>The steps to build a netbsd kernel are:
+ cd /usr/src/sys/arch/&amp;lt;ARCH&amp;gt;/conf , where  is your machine&amp;rsquo;s architecture such as &amp;lsquo;i386&amp;rsquo;, &amp;lsquo;sparc&amp;rsquo;, &amp;lsquo;mac68k&amp;rsquo;.
+ `cp GENERIC &amp;lt;MYCONF&amp;gt;, where  is your name for this configuration. You could use your hostname, the machine type, or even your first name. Keep to letters, numbers, and _ characters.
+ vi &amp;lt;MYCONF&amp;gt; Initially you can skip this stage. You can remove drivers for CPU types, hardware, and devices you do not have or use, or even enable options, such as on i386 commenting out the &amp;lsquo;pc0&amp;rsquo; line and enabling the &amp;lsquo;vt0&amp;rsquo; to gain virtual consoles.</description>
+    </item>
+    
+    <item>
+      <title>Qubes OS, a Xen based Desktop OS</title>
+      <link>https://aerth.github.io/blog/p/qubes/</link>
+      <pubDate>Tue, 09 Feb 2016 23:07:37 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/qubes/</guid>
+      <description> Security by Isolation More info: https://www.qubes-os.org/ | http://qubesosmamapaxpa.onion/
+ Not Linux Runs multiple instances of Linux Single User system dom0 stays offline One VM for this, One VM for that. Support for Fedora, Debian, and Whonix VMs  Give it a try! </description>
+    </item>
+    
+    <item>
+      <title>five volt future</title>
+      <link>https://aerth.github.io/blog/p/five-volt-future/</link>
+      <pubDate>Tue, 09 Feb 2016 00:29:31 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/five-volt-future/</guid>
+      <description>I have a small collection of 5v accessories. I feel 5V is an epic thing.
+Mobile homes / RVs have 5volt support!
+Cabins can have 5volt support!
+Your new home can have 5volt support!
+Imagine no adapters, it&amp;rsquo;s easy if you tried.
+ Anker 15000 mAh Battery Anker 14W Solar Charger (backpack portable size) Vape Pen, Battery pack ASUS Zentab tablet Wind-up USB charger Raspberry Pi
+ USB 4-port hub</description>
+    </item>
+    
+    <item>
+      <title>golang setup</title>
+      <link>https://aerth.github.io/blog/p/golang-setup/</link>
+      <pubDate>Mon, 08 Feb 2016 02:29:34 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/golang-setup/</guid>
+      <description>Golang post-install Setting $GOPATH I use this in my ~/.zshrc or ~/.bashrc or system-wide in /etc/profile on a new user, or new computer. I don&amp;rsquo;t mess with it ever:
+export GOPATH=$HOME/work # set gopath export PATH=$PATH:$GOPATH/bin # put go programs in your path  Now I test with something simple, and useful: sift, a fast grep alternative.
+go get -v -u github.com/svent/sift testing echo $PATH | sift $GOPATH  New projects are in namespaces, cd $GOPATH/src/github.</description>
+    </item>
+    
+  </channel>
+</rss>

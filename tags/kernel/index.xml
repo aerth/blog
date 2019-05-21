@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kernel on aerth</title>
+    <link>https://aerth.github.io/blog/tags/kernel/</link>
+    <description>Recent content in kernel on aerth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 10 Feb 2016 07:43:27 +0000</lastBuildDate>
+    
+	<atom:link href="https://aerth.github.io/blog/tags/kernel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>building netbsd kernel</title>
+      <link>https://aerth.github.io/blog/p/building-netbsd-kernel/</link>
+      <pubDate>Wed, 10 Feb 2016 07:43:27 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/building-netbsd-kernel/</guid>
+      <description>The steps to build a netbsd kernel are:
+ cd /usr/src/sys/arch/&amp;lt;ARCH&amp;gt;/conf , where  is your machine&amp;rsquo;s architecture such as &amp;lsquo;i386&amp;rsquo;, &amp;lsquo;sparc&amp;rsquo;, &amp;lsquo;mac68k&amp;rsquo;.
+ `cp GENERIC &amp;lt;MYCONF&amp;gt;, where  is your name for this configuration. You could use your hostname, the machine type, or even your first name. Keep to letters, numbers, and _ characters.
+ vi &amp;lt;MYCONF&amp;gt; Initially you can skip this stage. You can remove drivers for CPU types, hardware, and devices you do not have or use, or even enable options, such as on i386 commenting out the &amp;lsquo;pc0&amp;rsquo; line and enabling the &amp;lsquo;vt0&amp;rsquo; to gain virtual consoles.</description>
+    </item>
+    
+  </channel>
+</rss>

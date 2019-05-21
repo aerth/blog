@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>golang setup &middot; aerth</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://aerth.github.io/blog/"><h1>aerth</h1></a>
+      <p class="lead">
+       aerth stuff 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://aerth.github.io/blog/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>golang setup</h1>
+  <time datetime=2016-02-08T02:29:34Z class="post-date">Mon, Feb 8, 2016</time>
+  
+
+<h1 id="golang-post-install">Golang post-install</h1>
+
+<h2 id="setting-gopath">Setting $GOPATH</h2>
+
+<p>I use this in my ~/.zshrc or ~/.bashrc or system-wide in /etc/profile on
+a new user, or new computer. I don&rsquo;t mess with it ever:</p>
+
+<pre><code>export GOPATH=$HOME/work # set gopath
+
+export PATH=$PATH:$GOPATH/bin # put go programs in your path
+</code></pre>
+
+<p>Now I test with something simple, and useful: sift, a fast grep
+alternative.</p>
+
+<pre><code>go get -v -u github.com/svent/sift
+testing
+echo $PATH | sift $GOPATH
+</code></pre>
+
+<p>New projects are in namespaces, <code>cd $GOPATH/src/github.com</code> and
+<code>mkdir $USER</code> then and you may create a new folder for a new
+project. If you were to enter the project directory and type <code>go 
+build</code> you will see a new binary program in the source directory. But
+if you type <code>go install</code> you will find the new program in your
+$PATH !</p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

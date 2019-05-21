@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>xen on aerth</title>
+    <link>https://aerth.github.io/blog/tags/xen/</link>
+    <description>Recent content in xen on aerth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 09 Feb 2016 23:07:37 +0000</lastBuildDate>
+    
+	<atom:link href="https://aerth.github.io/blog/tags/xen/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Qubes OS, a Xen based Desktop OS</title>
+      <link>https://aerth.github.io/blog/p/qubes/</link>
+      <pubDate>Tue, 09 Feb 2016 23:07:37 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/qubes/</guid>
+      <description> Security by Isolation More info: https://www.qubes-os.org/ | http://qubesosmamapaxpa.onion/
+ Not Linux Runs multiple instances of Linux Single User system dom0 stays offline One VM for this, One VM for that. Support for Fedora, Debian, and Whonix VMs  Give it a try! </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>netbsd php70 fpm &middot; aerth</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://aerth.github.io/blog/"><h1>aerth</h1></a>
+      <p class="lead">
+       aerth stuff 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://aerth.github.io/blog/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>netbsd php70 fpm</h1>
+  <time datetime=2016-02-12T16:16:02Z class="post-date">Fri, Feb 12, 2016</time>
+  
+
+<h1 id="how-to-build-php-fpm-7-0-on-netbsd-from-pkgsrc">How to build php-fpm 7.0 on netbsd from pkgsrc</h1>
+
+<h2 id="and-run-it-through-nginx-intertwined-with-another-app">And run it through nginx intertwined with another app.</h2>
+
+<h1 id="cat-mk-conf">cat /mk.conf</h1>
+
+<pre><code>PKG_OPTIONS.nginx+=     naxsi
+PKG_RCD_SCRIPTS=YES
+PHP_VERSIONS_ACCEPTED=70
+</code></pre>
+
+<h1 id="cat-usr-pkgsrc-meta-pkgs-php70-extensions-makefile">cat /usr/pkgsrc/meta-pkgs/php70-extensions/Makefile</h1>
+
+<pre><code># Comment out these lines:
+
+#DEPENDS+=      php&gt;=${PHP_VERSION}&lt;${NEXT_VERS}:${PHPPKGSRCDIR}
+#DEPENDS+=      ${APACHE_PKG_PREFIX}-${PHP_PKG_PREFIX}&gt;=${PHP_VERSION}&lt;${NEXT_VERS}:../../www/ap-php
+</code></pre>
+
+<p>$ cd /usr/pkgsrc/meta-pkgs/php70-extensions/
+$ make clean &amp;&amp; make update</p>
+
+<p>$ cd /usr/pkgsrc/www/nginx
+$ make clean &amp;&amp; make update</p>
+
+<h1 id="cat-usr-pkg-etc-nginx-nginx-conf">cat /usr/pkg/etc/nginx/nginx.conf</h1>
+
+<pre><code>
+user   nginx  nginx;
+worker_processes  1;
+#error_log  /var/log/nginx/error.log;                                                                                      $
+error_log  /var/log/nginx/error.log  debug;
+#error_log  /var/log/nginx/error.log  info;
+#pid        /var/run/nginx.pid;
+events {
+    worker_connections  1024;
+}
+http {
+        server_tokens off;
+        # server_names_hash_bucket_size 64;
+        server_name_in_redirect off;
+    include /usr/pkg/etc/nginx/naxsi_core.rules;
+    include       /usr/pkg/etc/nginx/mime.types;
+    default_type  application/octet-stream;
+    sendfile        on;
+    #tcp_nopush     on;
+    #keepalive_timeout  0;
+    keepalive_timeout  65;
+    #gzip  on;
+        include /usr/pkg/etc/nginx/conf.d/*.conf;
+        include /usr/pkg/etc/nginx/sites-enabled/*;
+}
+
+
+</code></pre>
+
+<h1 id="cat-usr-pkg-etc-nginx-sites-enabled-default">cat /usr/pkg/etc/nginx/sites-enabled/_default</h1>
+
+<h1 id="personally-i-dont-like-php-running-on-on-the-default-ip">Personally, I dont like php running on / on the default IP</h1>
+
+<h1 id="use-this-to-route-to-a-specific-server-running-on-6099">Use this to route to a specific server running on 6099</h1>
+
+<p>server {</p>
+
+<pre><code>    server_name default_address;
+    listen 80;
+    location / {
+    proxy_pass http://127.0.0.1:6099;
+    }
+</code></pre>
+
+<p>}</p>
+
+<h1 id="cat-usr-pkg-etc-nginx-sites-enabled-example-com">cat /usr/pkg/etc/nginx/sites-enabled/example.com</h1>
+
+<pre><code>server {
+        server_name isupon.us;
+        error_page 404 /srv/live/_default/404.html;
+        root   /srv/live/isupon.us/public;
+
+# This shows our static page on :6099 for every request that isn't /
+# This includes /index.php and /index.php?whatever
+# Don't use those kind of URLs.
+
+        location ~ $ {
+        proxy_pass http://127.0.0.1:6099;
+        }
+
+        error_page 404             /404.html;
+        error_page 500 502 503 504 /50x.html;
+
+        location = / {
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $document_root/index.php;
+        fastcgi_param HTTPS off;
+        include fastcgi_params;
+        }
+
+    # Generated thumbnail images
+    location ~* /thumbs/(.*)$ {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    # Bolt backend access
+    #
+    # NOTE: If you set a custom branding path, you will need to change '/bolt/' 
+    #       here to match
+    location ~* /bolt/(.*)$ {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    # Backend async routes
+    location ~* /async/(.*)$ {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    # Enforce caching for certain file extension types
+    location ~* \.(?:ico|css|js|gif|jpe?g|png|ttf|woff|woff2)$ {
+        access_log off;
+        expires 30d;
+        add_header Pragma public;
+        add_header Cache-Control &quot;public, mustrevalidate, proxy-revalidate&quot;;
+    }
+
+    # Don't create logs for favicon.ico or robots.txt requests
+    location = /(?:favicon.ico|robots.txt) {
+        access_log off;
+        log_not_found off;
+    }
+
+    # Block PHP files from being run in upload (files), app, theme and extension directories
+    location ~* /(?:app|extensions|files|theme)/(.*)\.php$ {
+        deny all;
+    }
+
+    # Block hidden files
+    location ~ /\. {
+        deny all;
+    }
+
+    # Block access to Sqlite database files
+    location ~ /\.(?:db)$ {
+        deny all;
+    }
+
+    # Block access to the app, cache &amp; vendor directories
+    location ~ /(?:app|src|tests|vendor) {
+        deny all;
+    }
+
+    # Block access to certain JSON files
+    location ~ /(?:bower|composer|jsdoc|package)\.json$ {
+        deny all;
+    }
+
+    # Block access to Markdown, Twig &amp; YAML files directly
+    location ~* /(.*)\.(?:dist|markdown|md|twig|yaml|yml)$ {
+        deny all;
+    }
+
+
+
+
+}
+
+</code></pre>
+
+<h1 id="now-requests-to-example-com-show-your-php-web-app">Now, requests to example.com show your php web app.</h1>
+
+<h1 id="other-requests-go-to-your-other-app">Other requests go to your other app.</h1>
+
+<p>durr</p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

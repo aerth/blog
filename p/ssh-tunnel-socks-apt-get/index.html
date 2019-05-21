@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ssh tunnel apt-get SOCKS proxy &middot; aerth</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://aerth.github.io/blog/"><h1>aerth</h1></a>
+      <p class="lead">
+       aerth stuff 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://aerth.github.io/blog/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>ssh tunnel apt-get SOCKS proxy</h1>
+  <time datetime=2016-02-28T06:10:47Z class="post-date">Sun, Feb 28, 2016</time>
+  
+
+<h2 id="for-use-behind-a-restrictive-firewall">For use behind a restrictive firewall.</h2>
+
+<p>Use SSH Tunnel for apt-get install (Debian)</p>
+
+<pre><code>
+$ cat bin/grab 
+#!/bin/sh
+echo Downloading $1 using proxychains4
+sudo proxychains4 -q apt-get install -d $1
+echo Installing $1 from .debs
+sudo apt-get install $1
+
+</code></pre>
+
+<p>Set up proxychains4 for the SSH tunnel</p>
+
+<pre><code>$ tail /usr/local/etc/proxychains.conf 
+#       proxy types: http, socks4, socks5
+#        ( auth types supported: &quot;basic&quot;-http  &quot;user/pass&quot;-socks )
+#
+[ProxyList]
+# defaults set to &quot;tor&quot;
+#socks4 	127.0.0.1 9050
+# but i use &quot;ssh -D 1080 example.com&quot; to set up a &quot;poor man's VPN&quot;
+socks4	127.0.0.1 1080
+
+</code></pre>
+
+<p>Start the SOCKS proxy on 1080 and login to SSH server</p>
+
+<pre><code>$ cat bin/isp-relief 
+#!/bin/sh
+ssh -D 1080 $1
+
+</code></pre>
+
+<p>Use it</p>
+
+<pre><code>
+bin/isp-relief yourshellexample.com
+
+</code></pre>
+
+<pre><code>
+bin/grab &quot;pidgin pidgin-otr git golang&quot;
+
+</code></pre>
+
+<p>This assumes you have set up a ~/.ssh/config file like so:</p>
+
+<pre><code>
+$ cat ~/.ssh/config
+
+host example.com
+IdentityFile ~/.ssh/id_rsa
+user yourname
+port 22
+
+</code></pre>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

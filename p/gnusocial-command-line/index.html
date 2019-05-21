@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>gnusocial command line &middot; aerth</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://aerth.github.io/blog/"><h1>aerth</h1></a>
+      <p class="lead">
+       aerth stuff 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://aerth.github.io/blog/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>gnusocial command line</h1>
+  <time datetime=2016-02-24T06:57:03Z class="post-date">Wed, Feb 24, 2016</time>
+  
+
+<h1 id="go-qo-quitter">Go: qo-quitter</h1>
+
+<h3 id="a-gnu-social-client-for-the-future">&ldquo;A GNU Social client for the future&rdquo;</h3>
+
+<p>So you are on your shell account, and want to read, post, follow new people, etc. go-quitter allows you to access your GNU Social node&rsquo;s API from your terminal window.</p>
+
+<p>Very work in progress. The entire code base is under complete transformation as I am learning Go. As of v0.0.8 the command go-quitter is separated from the go-quitter library. The library still may have things like &ldquo;os.Exit()&rdquo; and &ldquo;fmt.Println()&rdquo; which should not be there. They are being removed eventually.</p>
+
+<p>Here is a screencast overview of the program <noscript>(if you enable javascript!)</noscript>:
+<a href="https://asciinema.org/a/39981"><img src="https://asciinema.org/a/39981.png" alt="asciicast" /></a></p>
+
+<pre><code>go get -v -u github.com/aerth/go-quitter/cmd/go-quitter
+
+</code></pre>
+
+<p>now try it out</p>
+
+<pre><code># saves your credentials safely for use on your public shell server account
+go-quitter config
+
+# this gets the latest 20
+qo-quitter read
+
+# more commands!
+go-quitter help
+</code></pre>
+
+<h1 id="python-anonquit">Python: Anonquit</h1>
+
+<h2 id="i-want-to-post-real-quick-using-python3">&ldquo;I want to post real quick using python3!&rdquo;</h2>
+
+<p>anonquit is a python3 script i found and it was all in spanish so I made an english
+branch because i dont know how real translations would work.</p>
+
+<pre><code>git clone https://github.com/aerth/anonquit
+cd anonquit
+# now set up account with:
+anonquit -a
+
+</code></pre>
+
+<p>Hey let me know what you think.</p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

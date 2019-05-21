@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/</loc>
+    <lastmod>2016-05-01T05:31:56+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/</loc>
+    <lastmod>2016-05-01T05:31:56+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/slackware/</loc>
+    <lastmod>2016-05-01T05:31:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/plan-9-golang/</loc>
+    <lastmod>2016-04-20T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/cosgo/</loc>
+    <lastmod>2016-04-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/seconf/</loc>
+    <lastmod>2016-04-16T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/</loc>
+    <lastmod>2016-03-26T00:03:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/automation/</loc>
+    <lastmod>2016-03-26T00:03:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/webhook-server/</loc>
+    <lastmod>2016-03-26T00:03:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/docker/</loc>
+    <lastmod>2016-03-13T07:03:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/rancher/</loc>
+    <lastmod>2016-03-13T07:03:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/rancheros/</loc>
+    <lastmod>2016-03-13T07:03:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/rancheros-docker-stuff/</loc>
+    <lastmod>2016-03-13T07:03:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/socks/</loc>
+    <lastmod>2016-02-28T06:10:47+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/bash/</loc>
+    <lastmod>2016-02-28T06:10:47+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/proxychains4/</loc>
+    <lastmod>2016-02-28T06:10:47+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/sh/</loc>
+    <lastmod>2016-02-28T06:10:47+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/ssh-tunnel-socks-apt-get/</loc>
+    <lastmod>2016-02-28T06:10:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/golang/</loc>
+    <lastmod>2016-02-25T04:03:46+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/one-page-web-server-contact-form/</loc>
+    <lastmod>2016-02-25T04:03:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/web-design/</loc>
+    <lastmod>2016-02-25T04:03:46+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/code/</loc>
+    <lastmod>2016-02-24T06:57:03+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/gnusocial/</loc>
+    <lastmod>2016-02-24T06:57:03+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/gnusocial-command-line/</loc>
+    <lastmod>2016-02-24T06:57:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/netbsd/</loc>
+    <lastmod>2016-02-12T16:16:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/netbsd-php70-fpm/</loc>
+    <lastmod>2016-02-12T16:16:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/nginx/</loc>
+    <lastmod>2016-02-12T16:16:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/php-sucks/</loc>
+    <lastmod>2016-02-12T16:16:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/pkgsrc/</loc>
+    <lastmod>2016-02-12T16:16:02+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/golang-ports/</loc>
+    <lastmod>2016-02-12T08:54:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/installing-from-pkgsrc-on-netbsd-as-unprivileged-user/</loc>
+    <lastmod>2016-02-12T07:03:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/easy-cross-compiling/</loc>
+    <lastmod>2016-02-11T08:35:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/golang-switch-to-logfile/</loc>
+    <lastmod>2016-02-11T08:28:17+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/golang-random-number-generator/</loc>
+    <lastmod>2016-02-11T08:27:02+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/building-netbsd-kernel/</loc>
+    <lastmod>2016-02-10T07:43:27+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/kernel/</loc>
+    <lastmod>2016-02-10T07:43:27+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/qubes/</loc>
+    <lastmod>2016-02-09T23:07:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/xen/</loc>
+    <lastmod>2016-02-09T23:07:37+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/5volt/</loc>
+    <lastmod>2016-02-09T00:29:31+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/categories/</loc>
+    <lastmod>2016-02-09T00:29:31+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/five-volt-future/</loc>
+    <lastmod>2016-02-09T00:29:31+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/tags/portable/</loc>
+    <lastmod>2016-02-09T00:29:31+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/categories/x/</loc>
+    <lastmod>2016-02-09T00:29:31+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/categories/y/</loc>
+    <lastmod>2016-02-09T00:29:31+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aerth.github.io/blog/p/golang-setup/</loc>
+    <lastmod>2016-02-08T02:29:34+00:00</lastmod>
+  </url>
+  
+</urlset>

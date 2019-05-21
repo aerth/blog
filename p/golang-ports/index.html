@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>golang ports &middot; aerth</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://aerth.github.io/blog/"><h1>aerth</h1></a>
+      <p class="lead">
+       aerth stuff 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://aerth.github.io/blog/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>golang ports</h1>
+  <time datetime=2016-02-12T08:54:14Z class="post-date">Fri, Feb 12, 2016</time>
+  
+
+<p>So there are a bunch of command line programs out there that are common between unix varieties.</p>
+
+<p>Some not as common as others.</p>
+
+<p>You may recognize:</p>
+
+<pre><code class="language-cat">
+Here is a list of simple utilities, but in Golang!
+
+</code></pre>
+
+<p>package cat</p>
+
+<p>import (
+    &ldquo;github.com/yuya-takeyama/argf&rdquo;
+    &ldquo;io&rdquo;
+    &ldquo;os&rdquo;
+)</p>
+
+<p>func Cat(args []string) (int, error) {
+    r, err := argf.From(args)
+    if err != nil {
+        return 2, err
+    }
+    _, err = io.Copy(os.Stdout, r)
+    if err != nil {
+        return 2, err
+    }
+    return 0, nil
+}</p>
+
+<p>```</p>
+
+<h1 id="these-are-big">These are big</h1>
+
+<p><a href="https://github.com/aisola/go-coreutils">https://github.com/aisola/go-coreutils</a></p>
+
+<p><a href="https://github.com/EricLagergren/go-coreutils">https://github.com/EricLagergren/go-coreutils</a></p>
+
+<p><a href="https://github.com/surma/gobox">https://github.com/surma/gobox</a></p>
+
+<p><a href="https://github.com/lopopolo/unixtools">https://github.com/lopopolo/unixtools</a></p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

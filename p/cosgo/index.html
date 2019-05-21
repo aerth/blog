@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>cosgo - contact form server &middot; aerth</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://aerth.github.io/blog/"><h1>aerth</h1></a>
+      <p class="lead">
+       aerth stuff 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://aerth.github.io/blog/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>cosgo - contact form server</h1>
+  <time datetime=2016-04-16T00:00:00Z class="post-date">Sat, Apr 16, 2016</time>
+  
+
+<p>Edit: Here is a link to a running cosgo instance: <a href="https://isupon.us">https://isupon.us</a></p>
+
+<p>And newest version running: <a href="https://cosgo.herokuapp.com">https://cosgo.herokuapp.com</a></p>
+
+<p>Download: <a href="https://github.com/aerth/cosgo/releases/latest">https://github.com/aerth/cosgo/releases/latest</a></p>
+
+<p>While I was designing web sites, I noticed most of the logic in typical web sites happens <em>in the form</em>. For example:</p>
+
+<ul>
+<li>Plain old Contact forms</li>
+<li>&ldquo;Request an estimate&rdquo; for businesses</li>
+<li>Surveys</li>
+<li><em>mail-order catalog</em> style purchasing</li>
+</ul>
+
+<p>To upgrade your static site and implement a simple contact form means <em>installing and using PHP, Node.js, Ruby, CGI,</em> etc. So I created a contact form server that allows me to <strong>&ldquo;set it and forget it&rdquo;</strong>.</p>
+
+<h4 id="cosgo-aims-to-solve-these-problems">Cosgo aims to solve these problems:</h4>
+
+<ul>
+<li>I just want a <strong>static HTML/CSS/JS web site</strong> with a <strong>customizable form</strong> that <strong>works</strong>.</li>
+<li>And I don&rsquo;t want to use any external components (unless I want to use an SMTP API like Sendgrid.)</li>
+<li>And I don&rsquo;t want to install PHP, Apache, or anything else!</li>
+</ul>
+
+<p>single instance is very standalone, and can very well be the only thing running on a server. You can <code>ssh</code> in and check your mailbox with <code>mutt -Rf cosgo.mbox</code>. Or you can <code>scp</code> it out whenever you like.</p>
+
+<p>multiple instances of cosgo can exist behind nginx with fastcgi_pass, in <code>cosgo -fastcgi</code> mode. For example:</p>
+
+<pre><code>
+## Start 3 cosgo instances in fastcgi mode
+cosgo -fastcgi -port 8081 &amp;
+cosgo -fastcgi -port 8082 &amp;
+cosgo -fastcgi -port 8083
+
+## nginx would be configured to reverse proxy to fastcgi ports
+# example.com &gt; 8081
+# example.net &gt; 8082
+# example.org &gt; 8083
+
+</code></pre>
+
+<p>The config file is saved at ~/.cosgorc by default. It stores such things as <code>port</code>, <code>interface</code>, <code>sendgrid API key</code>, <code>mandrill API key</code>, and <code>logpath</code>.</p>
+
+<p>Use the config like so: <code>cosgo -config -fastcgi</code> (run command twice)</p>
+
+<h4 id="cosgo-uses-a-couple-spam-reduction-techniques-you-may-have-heard-about">Cosgo uses a couple spam-reduction techniques you may have heard about:</h4>
+
+<ul>
+<li>CSRF token</li>
+<li>captcha code</li>
+<li>email validation</li>
+</ul>
+
+<h4 id="something-probably-not-seen-anywhere-else-is-a-new-spam-reduction-technique-i-am-calling-the-dynamic-post-endpoint">Something probably not seen anywhere else is a new spam-reduction technique I am calling the &ldquo;Dynamic POST Endpoint&rdquo;</h4>
+
+<ul>
+<li>Every 42 minutes the POST endpoint changes. It is pretty much un-predictable.</li>
+<li>With no static POST endpoint, it is a <em>little</em> tougher to launch a spam attack against cosgo powered sites.</li>
+</ul>
+
+<h4 id="some-things-on-the-todo-list">Some things on the TODO list:</h4>
+
+<ul>
+<li>Feature: GPG encrypt the messages (in case of stolen mbox)</li>
+<li>Feature: Add <code>GPG Public Key</code> field (allow easy replies)</li>
+<li>Feature: Implement rate-limiting for visits and sends</li>
+</ul>
+
+<p>Hope it works out for a lot of people! Upgrade <strong>often</strong>. Check <a href="https://github.com/aerth/cosgo/commits/master">https://github.com/aerth/cosgo/commits/master</a> to see if you want to upgrade to the current (&ldquo;master&rdquo;) version. Contributions are welcome. Submit an issue and/or pull request at <a href="https://github.com/aerth/cosgo">https://github.com/aerth/cosgo</a></p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

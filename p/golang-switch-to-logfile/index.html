@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>golang switch to logfile &middot; aerth</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://aerth.github.io/blog/"><h1>aerth</h1></a>
+      <p class="lead">
+       aerth stuff 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://aerth.github.io/blog/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>golang switch to logfile</h1>
+  <time datetime=2016-02-11T08:28:17Z class="post-date">Thu, Feb 11, 2016</time>
+  <pre><code>
+func OpenLog(){
+f, err := os.OpenFile(&quot;./debug.log&quot;, os.O_RDWR | os.O_CREATE | 
+os.O_APPEND, 0666)
+if err != nil {
+    log.Fatal(&quot;error opening file: %v&quot;, err)
+		log.Fatal(&quot;MANDRILL_KEY is Crucial.&quot;)
+		os.Exit(1)
+}
+
+log.SetOutput(f)
+}
+
+</code></pre>
+
+<p>This function can be placed in main() like so:</p>
+
+<pre><code>
+	log.Printf(&quot;Starting Server on http://127.0.0.1:%s&quot;, *port)
+	log.Println(&quot;Switching Logs to debug.log&quot;)
+	OpenLog()
+	log.Println(&quot;Server on&quot;, *port)
+
+</code></pre>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

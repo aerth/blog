@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>SOCKS on aerth</title>
+    <link>https://aerth.github.io/blog/tags/socks/</link>
+    <description>Recent content in SOCKS on aerth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 28 Feb 2016 06:10:47 +0000</lastBuildDate>
+    
+	<atom:link href="https://aerth.github.io/blog/tags/socks/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ssh tunnel apt-get SOCKS proxy</title>
+      <link>https://aerth.github.io/blog/p/ssh-tunnel-socks-apt-get/</link>
+      <pubDate>Sun, 28 Feb 2016 06:10:47 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/ssh-tunnel-socks-apt-get/</guid>
+      <description>For use behind a restrictive firewall. Use SSH Tunnel for apt-get install (Debian)
+ $ cat bin/grab #!/bin/sh echo Downloading $1 using proxychains4 sudo proxychains4 -q apt-get install -d $1 echo Installing $1 from .debs sudo apt-get install $1  Set up proxychains4 for the SSH tunnel
+$ tail /usr/local/etc/proxychains.conf # proxy types: http, socks4, socks5 # ( auth types supported: &amp;quot;basic&amp;quot;-http &amp;quot;user/pass&amp;quot;-socks ) # [ProxyList] # defaults set to &amp;quot;tor&amp;quot; #socks4 127.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>building netbsd kernel &middot; aerth</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://aerth.github.io/blog/"><h1>aerth</h1></a>
+      <p class="lead">
+       aerth stuff 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://aerth.github.io/blog/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>building netbsd kernel</h1>
+  <time datetime=2016-02-10T07:43:27Z class="post-date">Wed, Feb 10, 2016</time>
+  <p>The steps to build a netbsd kernel are:</p>
+
+<ul>
+<li><p><code>cd /usr/src/sys/arch/&lt;ARCH&gt;/conf</code> , where <ARCH> is your machine&rsquo;s architecture such as &lsquo;i386&rsquo;, &lsquo;sparc&rsquo;, &lsquo;mac68k&rsquo;.</p></li>
+
+<li><p>`<code>cp GENERIC &lt;MYCONF&gt;</code>, where <MYCONF> is your name for this configuration. You could use your hostname, the machine type, or even your first name. Keep to letters, numbers, and _ characters.</p></li>
+
+<li><p><code>vi &lt;MYCONF&gt;</code> Initially you can skip this stage. You can remove
+drivers for CPU types, hardware, and devices you do not have or use, or
+even enable options, such as on i386 commenting out the &lsquo;pc0&rsquo; line and
+enabling the &lsquo;vt0&rsquo; to gain virtual consoles. A good start to determining
+what hardware drivers you definitely need to keep is to read the output
+of &ldquo;dmesg&rdquo; or &ldquo;dmesg | grep &lsquo; at &lsquo;&rdquo;. For every line containing &lsquo;<XXX> at
+<YYY>&rsquo; you need to keep the entries for both <XXX> and <YYY>. You should
+also read options(4) for information on the different kernel
+configuration options.</p></li>
+
+<li><p><code>config &lt;MYCONF&gt;</code></p></li>
+
+<li><p><code>cd ../compile/&lt;MYCONF&gt;</code></p></li>
+
+<li><p><code>make depend</code></p></li>
+
+<li><p><code>make</code></p></li>
+
+<li><p><code>su</code></p></li>
+
+<li><p><code>mv /netbsd /netbsd.old</code></p></li>
+
+<li><p><code>mv netbsd /netbsd</code></p></li>
+
+<li><p><code>shutdown -r now</code></p></li>
+</ul>
+
+<p>If you have any problems: You should boot your &lsquo;netbsd.old&rsquo; kernel
+in single user mode. The procedure varies from port to port depending on
+the boot procedure, but on i386 it would be:</p>
+
+<ul>
+<li><p>Press SPACE when the first NetBSD message appears</p></li>
+
+<li><p><code>boot netbsd.old -s</code></p></li>
+
+<li><p>Then swap your kernel back:</p>
+
+<pre><code>    &quot;fsck /&quot;
+    &quot;mount /&quot;
+    &quot;mv netbsd.old netbsd&quot;
+    &quot;exit&quot;
+</code></pre></li>
+</ul>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

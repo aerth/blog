@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on aerth</title>
+    <link>https://aerth.github.io/blog/tags/</link>
+    <description>Recent content in Tags on aerth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Mar 2016 00:03:27 +0000</lastBuildDate>
+    
+	<atom:link href="https://aerth.github.io/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>automation</title>
+      <link>https://aerth.github.io/blog/tags/automation/</link>
+      <pubDate>Sat, 26 Mar 2016 00:03:27 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/automation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>docker</title>
+      <link>https://aerth.github.io/blog/tags/docker/</link>
+      <pubDate>Sun, 13 Mar 2016 07:03:27 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/docker/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rancher</title>
+      <link>https://aerth.github.io/blog/tags/rancher/</link>
+      <pubDate>Sun, 13 Mar 2016 07:03:27 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/rancher/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>rancheros</title>
+      <link>https://aerth.github.io/blog/tags/rancheros/</link>
+      <pubDate>Sun, 13 Mar 2016 07:03:27 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/rancheros/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SOCKS</title>
+      <link>https://aerth.github.io/blog/tags/socks/</link>
+      <pubDate>Sun, 28 Feb 2016 06:10:47 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/socks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>bash</title>
+      <link>https://aerth.github.io/blog/tags/bash/</link>
+      <pubDate>Sun, 28 Feb 2016 06:10:47 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/bash/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>proxychains4</title>
+      <link>https://aerth.github.io/blog/tags/proxychains4/</link>
+      <pubDate>Sun, 28 Feb 2016 06:10:47 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/proxychains4/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sh</title>
+      <link>https://aerth.github.io/blog/tags/sh/</link>
+      <pubDate>Sun, 28 Feb 2016 06:10:47 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/sh/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>golang</title>
+      <link>https://aerth.github.io/blog/tags/golang/</link>
+      <pubDate>Thu, 25 Feb 2016 04:03:46 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/golang/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>web design</title>
+      <link>https://aerth.github.io/blog/tags/web-design/</link>
+      <pubDate>Thu, 25 Feb 2016 04:03:46 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/web-design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>code</title>
+      <link>https://aerth.github.io/blog/tags/code/</link>
+      <pubDate>Wed, 24 Feb 2016 06:57:03 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/code/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>gnusocial</title>
+      <link>https://aerth.github.io/blog/tags/gnusocial/</link>
+      <pubDate>Wed, 24 Feb 2016 06:57:03 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/gnusocial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>netbsd</title>
+      <link>https://aerth.github.io/blog/tags/netbsd/</link>
+      <pubDate>Fri, 12 Feb 2016 16:16:02 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/netbsd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nginx</title>
+      <link>https://aerth.github.io/blog/tags/nginx/</link>
+      <pubDate>Fri, 12 Feb 2016 16:16:02 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/nginx/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>php sucks</title>
+      <link>https://aerth.github.io/blog/tags/php-sucks/</link>
+      <pubDate>Fri, 12 Feb 2016 16:16:02 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/php-sucks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pkgsrc</title>
+      <link>https://aerth.github.io/blog/tags/pkgsrc/</link>
+      <pubDate>Fri, 12 Feb 2016 16:16:02 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/pkgsrc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>kernel</title>
+      <link>https://aerth.github.io/blog/tags/kernel/</link>
+      <pubDate>Wed, 10 Feb 2016 07:43:27 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/kernel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>xen</title>
+      <link>https://aerth.github.io/blog/tags/xen/</link>
+      <pubDate>Tue, 09 Feb 2016 23:07:37 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/xen/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>5volt</title>
+      <link>https://aerth.github.io/blog/tags/5volt/</link>
+      <pubDate>Tue, 09 Feb 2016 00:29:31 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/5volt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>portable</title>
+      <link>https://aerth.github.io/blog/tags/portable/</link>
+      <pubDate>Tue, 09 Feb 2016 00:29:31 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/tags/portable/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

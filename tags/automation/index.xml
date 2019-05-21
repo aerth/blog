@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>automation on aerth</title>
+    <link>https://aerth.github.io/blog/tags/automation/</link>
+    <description>Recent content in automation on aerth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 26 Mar 2016 00:03:27 +0000</lastBuildDate>
+    
+	<atom:link href="https://aerth.github.io/blog/tags/automation/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>now powered by webhooks</title>
+      <link>https://aerth.github.io/blog/p/webhook-server/</link>
+      <pubDate>Sat, 26 Mar 2016 00:03:27 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/webhook-server/</guid>
+      <description>Using Go webhook and github.com/aerth/blog</description>
+    </item>
+    
+  </channel>
+</rss>

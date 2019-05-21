@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>netbsd on aerth</title>
+    <link>https://aerth.github.io/blog/tags/netbsd/</link>
+    <description>Recent content in netbsd on aerth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 12 Feb 2016 16:16:02 +0000</lastBuildDate>
+    
+	<atom:link href="https://aerth.github.io/blog/tags/netbsd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>netbsd php70 fpm</title>
+      <link>https://aerth.github.io/blog/p/netbsd-php70-fpm/</link>
+      <pubDate>Fri, 12 Feb 2016 16:16:02 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/netbsd-php70-fpm/</guid>
+      <description>How to build php-fpm 7.0 on netbsd from pkgsrc And run it through nginx intertwined with another app. cat /mk.conf PKG_OPTIONS.nginx+= naxsi PKG_RCD_SCRIPTS=YES PHP_VERSIONS_ACCEPTED=70  cat /usr/pkgsrc/meta-pkgs/php70-extensions/Makefile # Comment out these lines: #DEPENDS+= php&amp;gt;=${PHP_VERSION}&amp;lt;${NEXT_VERS}:${PHPPKGSRCDIR} #DEPENDS+= ${APACHE_PKG_PREFIX}-${PHP_PKG_PREFIX}&amp;gt;=${PHP_VERSION}&amp;lt;${NEXT_VERS}:../../www/ap-php  $ cd /usr/pkgsrc/meta-pkgs/php70-extensions/ $ make clean &amp;amp;&amp;amp; make update
+$ cd /usr/pkgsrc/www/nginx $ make clean &amp;amp;&amp;amp; make update
+cat /usr/pkg/etc/nginx/nginx.conf  user nginx nginx; worker_processes 1; #error_log /var/log/nginx/error.log; $ error_log /var/log/nginx/error.log debug; #error_log /var/log/nginx/error.</description>
+    </item>
+    
+    <item>
+      <title>installing from pkgsrc on netbsd as unprivileged user</title>
+      <link>https://aerth.github.io/blog/p/installing-from-pkgsrc-on-netbsd-as-unprivileged-user/</link>
+      <pubDate>Fri, 12 Feb 2016 07:03:39 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/installing-from-pkgsrc-on-netbsd-as-unprivileged-user/</guid>
+      <description>$ cat ~/.zshrc
+ # aerth local mk.conf export MAKECONF=$HOME/etc/mk.conf export PREFIX=$HOME/pkg # aerth gopath export GOPATH=$HOME/work export PATH=$HOME/bin:$GOPATH/bin:$HOME/usr/pkg/bin:$PATH export GOARCH=amd64 export GOOS=netbsd # aerth local goroot export GOROOT=$HOME/usr/pkg/go PATH=${PATH}:/sys/sdf/bin MANPATH=${MANPATH}:/sys/sdf/man  </description>
+    </item>
+    
+    <item>
+      <title>building netbsd kernel</title>
+      <link>https://aerth.github.io/blog/p/building-netbsd-kernel/</link>
+      <pubDate>Wed, 10 Feb 2016 07:43:27 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/building-netbsd-kernel/</guid>
+      <description>The steps to build a netbsd kernel are:
+ cd /usr/src/sys/arch/&amp;lt;ARCH&amp;gt;/conf , where  is your machine&amp;rsquo;s architecture such as &amp;lsquo;i386&amp;rsquo;, &amp;lsquo;sparc&amp;rsquo;, &amp;lsquo;mac68k&amp;rsquo;.
+ `cp GENERIC &amp;lt;MYCONF&amp;gt;, where  is your name for this configuration. You could use your hostname, the machine type, or even your first name. Keep to letters, numbers, and _ characters.
+ vi &amp;lt;MYCONF&amp;gt; Initially you can skip this stage. You can remove drivers for CPU types, hardware, and devices you do not have or use, or even enable options, such as on i386 commenting out the &amp;lsquo;pc0&amp;rsquo; line and enabling the &amp;lsquo;vt0&amp;rsquo; to gain virtual consoles.</description>
+    </item>
+    
+  </channel>
+</rss>

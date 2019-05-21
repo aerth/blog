@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>seconf - secure configuration library &middot; aerth</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://aerth.github.io/blog/"><h1>aerth</h1></a>
+      <p class="lead">
+       aerth stuff 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://aerth.github.io/blog/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>seconf - secure configuration library</h1>
+  <time datetime=2016-04-16T00:00:00Z class="post-date">Sat, Apr 16, 2016</time>
+  <p>You know how you start a program and it needs environmental variables with some AWS keys or something?</p>
+
+<p>Or a configuration file, read once at startup and left just laying around.</p>
+
+<p>Well seconf adds a layer of protection to this area of the program.</p>
+
+<p>To someone who grabs a misplaced backup or something, it will be an encrypted file.</p>
+
+<p>To you, running your program, it will be a seamless experience.</p>
+
+<p>See it in action:</p>
+
+<p><a href="https://github.com/aerth/cosgo">https://github.com/aerth/cosgo</a>
+  <a href="https://github.com/aerth/go-quitter/cmd/go-quitter">https://github.com/aerth/go-quitter/cmd/go-quitter</a>
+  <a href="https://github.com/aerth/secenv">https://github.com/aerth/secenv</a>
+  <a href="https://github.com/aerth/seconf">https://github.com/aerth/seconf</a></p>
+
+<p>This really needs some testing in the real world! I have been using it for a couple sites for over a month (april 2016)</p>
+
+<p>And go-quitter has been using it since it existed, they were built together.</p>
+
+<p>Enjoy!</p>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>

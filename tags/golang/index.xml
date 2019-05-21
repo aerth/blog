@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>golang on aerth</title>
+    <link>https://aerth.github.io/blog/tags/golang/</link>
+    <description>Recent content in golang on aerth</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 25 Feb 2016 04:03:46 +0000</lastBuildDate>
+    
+	<atom:link href="https://aerth.github.io/blog/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>one page web server contact form</title>
+      <link>https://aerth.github.io/blog/p/one-page-web-server-contact-form/</link>
+      <pubDate>Thu, 25 Feb 2016 04:03:46 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/one-page-web-server-contact-form/</guid>
+      <description>Hey do you use wordpress!? Hey do you still use PHP!? Have you heard of cosgo!?  Get cosgo for free at https://github.com/aerth/cosgo
+See it in action, contact the author at: https://isupon.us/cosgo
+Use custom template, secure your contact form, and serve fast pages all day with cosgo!
+The end of PHP I created cosgo so that I could host multiple web pages on a single server without opening up the vulnerabilities of PHP, or apache.</description>
+    </item>
+    
+    <item>
+      <title>golang ports</title>
+      <link>https://aerth.github.io/blog/p/golang-ports/</link>
+      <pubDate>Fri, 12 Feb 2016 08:54:14 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/golang-ports/</guid>
+      <description>So there are a bunch of command line programs out there that are common between unix varieties.
+Some not as common as others.
+You may recognize:
+Here is a list of simple utilities, but in Golang!  package cat
+import ( &amp;ldquo;github.com/yuya-takeyama/argf&amp;rdquo; &amp;ldquo;io&amp;rdquo; &amp;ldquo;os&amp;rdquo; )
+func Cat(args []string) (int, error) { r, err := argf.From(args) if err != nil { return 2, err } _, err = io.Copy(os.Stdout, r) if err !</description>
+    </item>
+    
+    <item>
+      <title>easy cross compiling</title>
+      <link>https://aerth.github.io/blog/p/easy-cross-compiling/</link>
+      <pubDate>Thu, 11 Feb 2016 08:35:14 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/easy-cross-compiling/</guid>
+      <description>Build for Mac OS X, Windows, Windows 64, linux-arm, netbsd-amd64, and a plethora of others. Modify to your needs, like anything else in the world.
+Latest is inside https://github.com/aerth/cosgo (Makefile and scripts/pack.sh)
+The following code outputs these binary files:
+$ ./build-archs.sh Version10 $ ls Version10/ Version10_freebsd-386 Version10_netbsd-386 Version10_osx-amd64 Version10_freebsd-amd64 Version10_netbsd-amd64 Version10_windows-386.exe Version10_linux-386 Version10_openbsd-386 Version10_windows-amd64.exe Version10_linux-amd64 Version10_openbsd-amd64 Version10_linux-arm Version10_osx-386  #!/bin/sh version=&amp;quot;$1&amp;quot; mkdir $1 &amp;gt; /dev/null 2&amp;gt;&amp;amp;1 name=&amp;quot;../&amp;quot;&amp;quot;$version&amp;quot;&amp;quot;/&amp;quot;&amp;quot;$version&amp;quot;&amp;quot;_&amp;quot; # CGO_ENABLED=1 GOOS=darwin GOARCH=amd64 go build -o &amp;quot;$name&amp;quot;osx-amd64 GOOS=darwin GOARCH=386 go build -o &amp;quot;$name&amp;quot;osx-386 GOOS=freebsd GOARCH=amd64 go build -o &amp;quot;$name&amp;quot;freebsd-amd64 GOOS=freebsd GOARCH=386 go build -o &amp;quot;$name&amp;quot;freebsd-386 GOOS=netbsd GOARCH=amd64 go build -o &amp;quot;$name&amp;quot;netbsd-amd64 GOOS=netbsd GOARCH=386 go build -o &amp;quot;$name&amp;quot;netbsd-386 GOOS=openbsd GOARCH=amd64 go build -o &amp;quot;$name&amp;quot;openbsd-amd64 GOOS=openbsd GOARCH=386 go build -o &amp;quot;$name&amp;quot;openbsd-386 GOOS=linux GOARCH=arm go build -o &amp;quot;$name&amp;quot;linux-arm GOOS=linux GOARCH=amd64 go build -o &amp;quot;$name&amp;quot;linux-amd64 GOOS=linux GOARCH=386 go build -o &amp;quot;$name&amp;quot;linux-386 GOOS=windows GOARCH=amd64 go build -o &amp;quot;$name&amp;quot;windows-amd64.</description>
+    </item>
+    
+    <item>
+      <title>golang switch to logfile</title>
+      <link>https://aerth.github.io/blog/p/golang-switch-to-logfile/</link>
+      <pubDate>Thu, 11 Feb 2016 08:28:17 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/golang-switch-to-logfile/</guid>
+      <description> func OpenLog(){ f, err := os.OpenFile(&amp;quot;./debug.log&amp;quot;, os.O_RDWR | os.O_CREATE | os.O_APPEND, 0666) if err != nil { log.Fatal(&amp;quot;error opening file: %v&amp;quot;, err) log.Fatal(&amp;quot;MANDRILL_KEY is Crucial.&amp;quot;) os.Exit(1) } log.SetOutput(f) }  This function can be placed in main() like so:
+ log.Printf(&amp;quot;Starting Server on http://127.0.0.1:%s&amp;quot;, *port) log.Println(&amp;quot;Switching Logs to debug.log&amp;quot;) OpenLog() log.Println(&amp;quot;Server on&amp;quot;, *port)  </description>
+    </item>
+    
+    <item>
+      <title>golang random number generator</title>
+      <link>https://aerth.github.io/blog/p/golang-random-number-generator/</link>
+      <pubDate>Thu, 11 Feb 2016 08:27:02 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/golang-random-number-generator/</guid>
+      <description> func init() { rand.Seed(time.Now().UnixNano()) } var runes = []rune(&amp;quot;____ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890123456789012345678901234567890&amp;quot;) func GenerateAPIKey(n int) string { b := make([]rune, n) for i := range b { b[i] = runes[rand.Intn(len(runes))] } return string(b) }  </description>
+    </item>
+    
+    <item>
+      <title>golang setup</title>
+      <link>https://aerth.github.io/blog/p/golang-setup/</link>
+      <pubDate>Mon, 08 Feb 2016 02:29:34 +0000</pubDate>
+      
+      <guid>https://aerth.github.io/blog/p/golang-setup/</guid>
+      <description>Golang post-install Setting $GOPATH I use this in my ~/.zshrc or ~/.bashrc or system-wide in /etc/profile on a new user, or new computer. I don&amp;rsquo;t mess with it ever:
+export GOPATH=$HOME/work # set gopath export PATH=$PATH:$GOPATH/bin # put go programs in your path  Now I test with something simple, and useful: sift, a fast grep alternative.
+go get -v -u github.com/svent/sift testing echo $PATH | sift $GOPATH  New projects are in namespaces, cd $GOPATH/src/github.</description>
+    </item>
+    
+  </channel>
+</rss>

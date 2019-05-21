@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en-us" lang="en-us">
+<head>
+  <link href="//gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta name="generator" content="Hugo 0.55.6" />
+
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>slackware scripts &middot; aerth</title>
+
+  
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/print.css" media="print">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/poole.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/syntax.css">
+  <link type="text/css" rel="stylesheet" href="https://aerth.github.io/blog/css/hyde.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Abril+Fatface|PT+Sans:400,400i,700">
+
+
+  
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/favicon.png">
+
+  
+  
+</head>
+
+  <body class=" ">
+  <aside class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <a href="https://aerth.github.io/blog/"><h1>aerth</h1></a>
+      <p class="lead">
+       aerth stuff 
+      </p>
+    </div>
+
+    <nav>
+      <ul class="sidebar-nav">
+        <li><a href="https://aerth.github.io/blog/">Home</a> </li>
+        
+      </ul>
+    </nav>
+
+    <p>&copy; 2019. All rights reserved. </p>
+  </div>
+</aside>
+
+    <main class="content container">
+    <div class="post">
+  <h1>slackware scripts</h1>
+  <time datetime=2016-05-01T05:31:56Z class="post-date">Sun, May 1, 2016</time>
+  <p>Here it is: <code>git clone https://github.com/aerth/sh.git</code></p>
+
+<p>youtube-list downloads and installs youtube-dl if you don&rsquo;t have it
+already.</p>
+
+<p>ssh-tunnel makes it easy to SOCKS5 on SSH.</p>
+
+<p>suprslack - simple SlackBuilds and security upgrades</p>
+
+<pre><code>
+|-- README
+|-- bin
+|   |-- icanhazip
+|   `-- youtube-list
+|-- install.sh
+|-- rc.d
+|   |-- adminer
+|   |-- hdmi-hi
+|   |-- hdmi-low
+|   |-- iptables
+|   |-- network-time
+|   |-- ssh-tunnel
+|   `-- vga-1440
+`-- sbin
+    |-- mariadb_init
+    `-- suprslack
+
+</code></pre>
+
+<p>Here is nice to add to your /etc/rc.d/rc.inet1
+It asks you on boot whether you want to DHCP or not.</p>
+
+<p>Find the DHCP section and these lines:</p>
+
+<pre><code>
+        echo &quot;do dhcp?&quot;
+        read CONTINUEDHCP
+        if [ &quot;$CONTINUEDHCP&quot; == &quot;yes&quot; ]; then
+        echo &quot;/etc/rc.d/rc.inet1:  /sbin/dhcpcd -t ${DHCP_TIMEOUT[$i]:-10} ${DHCP_OPTIONS} ${1}&quot; | $LOGGER
+        /sbin/dhcpcd -t ${DHCP_TIMEOUT[$i]:-10} ${DHCP_OPTIONS} ${1}
+        fi
+
+</code></pre>
+
+</div>
+
+
+    </main>
+
+    
+  </body>
+</html>
